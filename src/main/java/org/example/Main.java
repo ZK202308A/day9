@@ -1,17 +1,50 @@
 package org.example;
 
+import java.io.*;
+import java.net.URL;
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void main(String[] args) throws Exception {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        String path = "https://cf.lottecinema.co.kr//Media/MovieFile/MovieMedia/202406/21170_301_2.mp4";
+
+        URL url = new URL(path);
+
+        InputStream fin = url.openStream();
+
+        //InputStream fin = new FileInputStream("aaa.jpg");
+        OutputStream fos = new FileOutputStream("bbb.mp4");
+
+        System.out.println(fin);
+
+        while (true) {
+
+            int data = fin.read();
+            System.out.println(data);
+
+            fos.write(data);
+            if (data == -1) {
+                break;
+            }//end if
+        }//end while
     }
 }
+//        Scanner in = new Scanner(System.in);
+//
+//        while(true){
+//
+//            System.out.println("숫자만 입력하세요");
+//
+//            String str = in.nextLine();
+//
+//            int value = Integer.parseInt(str);
+//
+//            System.out.println(value);
+//
+//        }//end while
+
+//    }
+//}
