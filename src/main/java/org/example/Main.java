@@ -7,6 +7,8 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
+    //bad code
     public static void main(String[] args) throws Exception {
 
         String path = "https://cf.lottecinema.co.kr//Media/MovieFile/MovieMedia/202406/21170_301_2.mp4";
